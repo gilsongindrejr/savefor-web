@@ -14,7 +14,7 @@ class UploadView(View):
             new_file = File(file=request.FILES['file'])
             new_file.author = request.user
             new_file.save()
-            context['message'] = 'Arquivo enviado com sucesso!'
+            context['message'] = 'File uploaded successfully!'
         form = FileForm()
         context['form'] = form
         return render(request, 'file_uploader/upload.html', context)
