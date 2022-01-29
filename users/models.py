@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractUser, BaseUserManager
 
 
 class UserManager(BaseUserManager):
-    """Criado o modelo de user manager apenas para futuras alteracoes"""
+    """Created only for future changes"""
     use_in_migrations = True
 
     def _create_user(self, username, password, **extra_fields):
@@ -31,7 +31,7 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractUser):
-    """Criado o modelo de usuario apenas para futuras alteracoes"""
+    """Created only for future changes"""
     def __str__(self):
         return self.email
 
