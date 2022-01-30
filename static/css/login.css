@@ -37,3 +37,15 @@ input{
 .submit-button{
     width: 30%;
 }
+.links{
+    display: flex;
+    justify-content: center;
+}
+.main-link{
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px dotted black;
+}
+.main-link:visited{
+    color: black;
+}
