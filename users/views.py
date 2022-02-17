@@ -5,7 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, CustomPasswordChangeForm
 
 
 class LoginUserView(LoginView):
@@ -18,6 +18,7 @@ class LogoutUserView(LoginRequiredMixin, LogoutView):
 
 class PasswordChangeUserView(PasswordChangeView):
     template_name = 'users/password_change.html'
+    form_class = CustomPasswordChangeForm
 
 
 class RegisterUserView(CreateView):
