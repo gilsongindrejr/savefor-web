@@ -1,0 +1,17 @@
+.c-message-red{
+    color: var(--light-grey-color);
+    background-color: var(--red-color);
+    border-radius: .2em;
+}
+
+.c-message-inherit{
+    color: var(--light-grey-color);
+    background-color: inherit;
+    border-radius: .2em;
+}
+
+.c-message-green{
+    color: var(--light-grey-color);
+    background-color: #06c206;
+    border-radius: .2em;
+}

@@ -1,0 +1,41 @@
+:root{
+    --light-grey-color: #e6e6e6;
+    --dark-grey-color: #5a5a5a;
+    --darker-grey-opacity-color: rgba(46, 46, 46, 0.7);
+    --red-color: #d60000;
+    --blue-color: #5c81ed;
+    --green-color: #5fcf48;
+}
+
+/* Specifics */
+.content{
+    box-shadow: 0px 0px 15px 7px #8a8a8a;
+    background-color: var(--darker-grey-opacity-color);
+}
+
+.c-form-box{
+    color: var(--dark-grey-color);
+    border: none;
+    border-radius: .3em;
+    height: 1.8em;
+    padding-left: .5em;
+}
+
+
+.c-title-header{
+    font-weight: normal;
+    color: var(--light-grey-color);
+}
+
+/* Backgorund image div */
+.c-background-image{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: -1;
+    background-image: url("../../img/library.jpeg");
+    filter: blur(15px);
+}
+.c-background-image::after{
+    content: "";
+}

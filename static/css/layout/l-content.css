@@ -1,0 +1,58 @@
+/* Generic */
+.l-center-h-v{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.l-center-h{
+    display: flex;
+    justify-content: center;
+}
+
+.l-flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.l-flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.l-width-49pc{
+    width: 49%;
+}
+
+.l-margin-right-2pc{
+    margin-right: 2%;
+}
+
+.l-margin-bottom-1em{
+    margin-bottom: 1em; 
+}
+
+.l-height-2em{
+    height: 2em;
+}
+
+/* Specific */
+.main{
+    height: 100vh;
+}
+
+.content{
+    transform: translateY(-10%);
+    width: 23em;
+    min-height: 25vh;
+    padding: .8em;
+}
+
+.l-upload-min-height{
+    min-height: 20vh;
+}
+
+.l-page-title{
+    color: var(--light-grey-color);
+    margin-top: 0;
+}
