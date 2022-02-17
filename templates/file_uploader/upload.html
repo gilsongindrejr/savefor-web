@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="GilsonGindreJr">
+
+    <link rel="stylesheet" href="{% static 'css/base/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/font.css' %}">
+    <link rel="stylesheet" href="{% static 'css/layout/l-content.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components/c-content.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components/c-buttons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components/c-messages.css' %}">
+    <link rel="stylesheet" href="{% static 'css/state/s-state.css' %}">
+
+    <title>Savefor - Upload</title>
+</head>
+<body>
+    <main class="main l-center-h-v">
+        <div class="c-background-image"></div>
+        <div class="content l-upload-min-height">
+            <header class="l-center-h-v l-flex-column">
+                <h1 class="c-title-header">Savefor</h1>
+                <p class="l-page-title">Upload</p>
+            </header>
+            {% if message %}
+                <div class="l-height-2em l-margin-bottom-1em l-center-h-v c-message-green">
+                    {{ message }}
+                </div>
+            {% endif %}
+            <main class="l-content-form">
+                <form class="l-center-h l-flex-column" method="post" enctype="multipart/form-data">
+
+                    {% csrf_token %}
+                    <div class="l-height-2em l-flex-row l-margin-bottom-1em">
+                        <label for="id_file" class="l-width-49pc l-center-h-v l-margin-right-2pc c-button-grey">Select file</label>
+                        <input type="submit" class="l-width-49pc c-button-blue" value="Send file">
+                    </div>
+
+                    {{ form }}
+
+                    <span id="file-name" class="l-height-2em l-margin-bottom-1em l-center-h-v c-message-inherit"></span>
+
+                    <div class="l-height-2em l-flex-row l-margin-bottom-1em">
+                        <a class="l-width-49pc l-center-h-v l-margin-right-2pc c-a-button c-button-red" href="{% url 'users:logout' %}">Logout</a>
+                        <a class="l-width-49pc l-center-h-v c-a-button c-button-grey" href="{% url 'users:password_change' %}">Change Password</a>
+                    </div>
+
+                </form>
+            </main>
+        </div>
+    </main>
+
+    <script src="{% static 'js/file-name.js' %}"></script>
+</body>
+</html>

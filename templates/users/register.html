@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="GilsonGindreJr">
+
+    <link rel="stylesheet" href="{% static 'css/base/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/font.css' %}">
+    <link rel="stylesheet" href="{% static 'css/layout/l-content.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components/c-content.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components/c-buttons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components/c-messages.css' %}">
+
+
+    <title>Savefor - Register</title>
+</head>
+<body>
+    <main class="main l-center-h-v">
+        <div class="c-background-image"></div>
+        <div class="content">
+            <header class="l-center-h-v l-flex-column">
+                <h1 class="c-title-header">Savefor</h1>
+                <p class="l-page-title">Register</p>
+            </header>
+             {% if form.errors %}
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <div class="l-height-2em l-margin-bottom-1em l-center-h-v c-message-red">
+                            {{ error }}
+                        </div>
+                    {% endfor %}
+                {% endfor%}
+            {% endif %}
+            <main class="l-content-form">
+                <form class="c-form l-center-h l-flex-column" method="post">
+                    {% csrf_token %}
+                    {{ form.username }}
+                    {{ form.email }}
+                    {{ form.password1 }}
+                    {{ form.password2 }}
+
+                    <div class="l-height-2em l-flex-row l-margin-bottom-1em">
+                        <input class="l-width-49pc l-margin-right-2pc c-form-submit c-button-blue" type="submit" value="Register">
+                        <a class="l-width-49pc l-center-h-v c-a-button c-button-grey" href="{% url 'users:login' %}">Login</a>
+                    </div>
+                </form>
+            <a class="c-a-link" href="{% url 'users:password_change' %}">Forgot password?</a>
+            </main>
+        </div>
+    </main>
+</body>
+</html>
