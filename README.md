@@ -77,8 +77,8 @@ Access: [127.0.0.1:8000/users/login](http://127.0.0.1:8000/users/login) and type
 
 When logged in, access: [127.0.0.1:8000/upload](http://127.0.0.1:8000/upload) select a file in ```Select file``` button and click ```Send file```, you will receive a success message.
 
-<img src="imgs/upload.png" style="width: 49%;">
-<img src="imgs/message.png" style="width: 49%;">
+<img src="imgs/upload.png">
+<img src="imgs/message.png">
 
 ### Change password
 
